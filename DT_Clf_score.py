@@ -15,8 +15,8 @@ import joblib
 
 def init():
     global model
-    model_path = os.path.join( os.getenv("../AzureMLModel"), "./DTmodel.pkl")
-    model = joblib.load('./DTmodel.pkl')
+    model_path = os.path.join( os.getenv("AZUREML_MODEL_DIR"), "./DTmodel.pkl")
+    model = joblib.load(model_path)
     logging.info("Init complete")
 
 def run(raw_data):
